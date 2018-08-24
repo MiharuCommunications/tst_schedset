@@ -1,0 +1,18 @@
+nvidia@tegra-ubuntu:~/src$ tar xzvf tst_schedset.tar.gz
+tst_schedset/Makefile
+tst_schedset/main.c
+nvidia@tegra-ubuntu:~/src$ cd tst_schedset/
+nvidia@tegra-ubuntu:~/src/tst_schedset$ ls
+main.c  Makefile
+nvidia@tegra-ubuntu:~/src/tst_schedset$ make
+gcc -ggdb -Wall   -c main.c -I/usr/local/include -lpthread -L/usr/local/lib
+gcc  -o schedtst main.o -I/usr/local/include -lpthread -L/usr/local/lib
+nvidia@tegra-ubuntu:~/src/tst_schedset$ sudo ./schedtst
+[sudo] password for nvidia:
+pthread_create with SCHED_FIFO OK
+Please ^C
+Set FIFO 99
+End of sched_func
+
+^C
+nvidia@tegra-ubuntu:~/src/tst_schedset$
